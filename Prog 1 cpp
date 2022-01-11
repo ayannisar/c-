@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+float calculateProfitLoss(float diff, float* costPrice){
+    return ((diff * 100) / *costPrice);
+}
+
+int main(){
+    float costPrice, sellingPrice, diff;
+    cout<<"Enter Cost Price Followed By Selling Price : \n";
+    cin>>costPrice>>sellingPrice;
+
+    if(sellingPrice >= costPrice){
+        diff = sellingPrice - costPrice;
+        cout<<"The Seller Made a "<<(calculateProfitLoss(diff, &costPrice))<<"% Profit.";
+    }else{
+        diff = costPrice - sellingPrice;
+       cout<<"The Seller Made a "<<(calculateProfitLoss(diff, &costPrice))<<"% Loss.";
+    }
+
+    return 0;
+
+}
